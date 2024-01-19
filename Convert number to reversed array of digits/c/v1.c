@@ -5,6 +5,8 @@
 void digitize(uint64_t n, uint8_t digits[], size_t *length_out)
 {
   uint64_t nCopy = n;
+  *length_out = 0;
+
   do
   {
     nCopy /= 10;
