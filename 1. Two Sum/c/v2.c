@@ -20,7 +20,7 @@ struct HashTable *createHashTable(int maxSize) {
   table->items = malloc(maxSize * sizeof(struct HashItem));
 
   for (int i = 0; i < maxSize; i++) {
-    table->items[i].key = -1;
+    table->items[i].value = -1;
   }
 
   return table;
@@ -35,7 +35,7 @@ int insertInHashMap(struct HashTable *table, int key, int value) {
 
   int index = hash(key, table->maxSize);
 
-  while (table->items[index].key != -1) {
+  while (table->items[index].value != -1) {
     index = (index + 1) % table->maxSize;
   }
 
@@ -56,7 +56,7 @@ int searchHashTable(struct HashTable *table, int key, int *value) {
   int index = hash(key, table->maxSize);
   int initialIndex = index;
 
-  while (table->items[index].key != -1) {
+  while (table->items[index].value != -1) {
     if (table->items[index].key == key) {
       *value = table->items[index].value;
       return 1;
