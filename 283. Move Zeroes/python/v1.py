@@ -6,7 +6,7 @@ class Solution:
         next_available_spot, second_pointer = 0, 0
         zero_count = 0
         while second_pointer < len(nums):
-            if second_pointer == 0:
+            if nums[second_pointer] == 0:
                 second_pointer += 1
                 zero_count += 1
             else:
