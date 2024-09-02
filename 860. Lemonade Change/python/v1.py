@@ -8,7 +8,7 @@ class Solution:
         }
 
         for bill in bills:
-            difference = bill - 10
+            difference = bill - 5 
 
             if bill == 20 and  bill_to_count[10] > 0:
                 bill_to_count[10] -= 1
