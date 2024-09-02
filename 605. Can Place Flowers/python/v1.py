@@ -6,11 +6,13 @@ class Solution:
         total = 0
 
         while i < len(flowerbed):
-            left_unoccupied = i - 1 < 0 or flowerbed[i] == 0
-            right_unoccupied = i + 1 > len(flowerbed) or flowerbed[i] == 0
-            if left_unoccupied and right_unoccupied:
+            left_unoccupied = i - 1 < 0 or flowerbed[i - 1] == 0
+            right_unoccupied = i + 1 > len(flowerbed) - 1 or flowerbed[i + 1] == 0
+            if flowerbed[i] == 0 and left_unoccupied and right_unoccupied:
                 total += 1
-                flower_bed[i] = 1
+                flowerbed[i] = 1
                 i += 2
             else:
                 i += 1
+
+        return total >= n
