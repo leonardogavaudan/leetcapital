@@ -12,8 +12,6 @@ class Solution:
     def getDirections(
         self, root: Optional[TreeNode], startValue: int, destValue: int
     ) -> str:
-        res = []
-
         def dfs(node: TreeNode | None, target: int, path: List[str]) -> List[str]:
             if not node:
                 return []
