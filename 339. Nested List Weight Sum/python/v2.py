@@ -52,3 +52,7 @@ class Solution:
                     res += element.getInteger() * depth
                 else:
                     recurse(element.getList(), depth + 1)
+
+        recurse(nestedList, 1)
+
+        return res
