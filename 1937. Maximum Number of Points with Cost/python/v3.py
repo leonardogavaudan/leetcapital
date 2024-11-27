@@ -7,23 +7,15 @@ class Solution:
         current_row = []
         i = 0
         while i < len(points):
-            current_row = points[i]
-            left = [
-                (
-                    prev_row[j]
-                    if j == 0 or prev_row[j - 1] - 1 < prev_row[j]
-                    else prev_row[j - 1] - 1
-                )
-                for j in range(len(prev_row))
-            ]
-            right = [
-                (
-                    prev_row[j]
-                    if (j == (len(prev_row) - 1)) or prev_row[j + 1] - 1 < prev_row[j]
-                    else prev_row[j + 1] - 1
-                )
-                for j in range(len(prev_row) - 1, -1, -1)
-            ][::-1]
+            current_row = points[i].copy()
+            left = [prev_row[0]]
+            for j in range(1, len(prev_row)):
+                left.append(max(left[-1] - 1, prev_row[j]))
+
+            right = [prev_row[-1]]
+            for j in range(len(prev_row) - 2, -1, -1):
+                right.append(max(right[-1] - 1, prev_row[j]))
+            right = right[::-1]
 
             for j in range(len(current_row)):
                 current_row[j] = current_row[j] + max(left[j], right[j])
