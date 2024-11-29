@@ -11,4 +11,4 @@ class Solution:
                 else:
                     res += 1
 
-        return res
+        return (res + 1) // 2

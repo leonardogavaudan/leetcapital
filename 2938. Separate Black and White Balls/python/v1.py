@@ -3,6 +3,8 @@ class Solution:
         steps = 0
         available_position = 0
         for i in range(len(s)):
-            if s[i] == "1":
+            if s[i] == "0":
                 steps += i - available_position
                 available_position += 1
+
+        return steps

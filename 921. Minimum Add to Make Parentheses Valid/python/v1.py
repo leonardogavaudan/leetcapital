@@ -1,6 +1,6 @@
 class Solution:
     def minAddToMakeValid(self, s: str) -> int:
-        res = 1
+        res = 0
         opening_count = 0
         for c in s:
             if c == "(":
