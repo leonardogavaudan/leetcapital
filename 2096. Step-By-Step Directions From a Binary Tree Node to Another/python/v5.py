@@ -28,7 +28,7 @@ class Solution:
                 return leftPath
             path.pop()
 
-            path.append("R")
+            path.append("L")
             rightPath = recurse(node.right, target, path)
             if rightPath:
                 return rightPath
