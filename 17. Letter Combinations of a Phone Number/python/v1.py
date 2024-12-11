@@ -3,6 +3,9 @@ from typing import Dict, List
 
 class Solution:
     def letterCombinations(self, digits: str) -> List[str]:
+        if not digits:
+            return []
+
         res = set()
         seen = set()
         mapping = {
