@@ -20,7 +20,7 @@ class Solution:
 
     def maxDistance(self, position: List[int], m: int) -> int:
         position.sort()
-        left_dist, right_dist = 0, position[-1] - position[0]
+        left_dist, right_dist = 1, position[-1] - position[0]
 
         while left_dist <= right_dist:
             dist = (left_dist + right_dist) // 2
@@ -29,4 +29,4 @@ class Solution:
             else:
                 right_dist = dist - 1
 
-        return left_dist
+        return left_dist - 1
