@@ -7,11 +7,11 @@ class Solution:
         nums.sort()
 
         for i in range(len(nums) - 1, -1, -1):
-            total_without_special = total - nums[i]
+            total_without_outlier = total - nums[i]
             left, right = 0, len(nums) - 1
             while left <= right:
                 mid = (left + right) // 2
-                target = total_without_special - nums[mid]
+                target = total_without_outlier - nums[mid]
                 if nums[mid] == target:
                     if mid != i:
                         return nums[i]
