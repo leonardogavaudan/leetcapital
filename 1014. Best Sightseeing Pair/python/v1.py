@@ -6,13 +6,13 @@ class Solution:
         best = 0
         left = []
         for v in values:
-            best = max(best + 1, v)
+            best = max(best - 1, v - 1)
             left.append(best)
 
         best = 0
         right = []
         for v in reversed(values):
-            best = max(best + 1, v)
+            best = max(best - 1, v - 1)
             right.append(best)
         right = right[::-1]
 
@@ -20,8 +20,8 @@ class Solution:
         for i in range(len(values)):
             res = max(
                 res,
-                values[i] + (right[i - 1] if i - 1 >= 0 else 0),
-                values[i] + (left[i + 1] if i + 1 < len(values) else 0),
+                values[i] + (left[i - 1] if i - 1 >= 0 else 0),
+                values[i] + (right[i + 1] if i + 1 < len(values) else 0),
             )
 
         return res
