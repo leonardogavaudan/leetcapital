@@ -51,7 +51,7 @@ unsafe-fixes = true
 # Unlike Flake8, Ruff doesn't enable pycodestyle warnings (`W`) or
 # McCabe complexity (`C901`) by default.
 select = ["I", "F", "E"]
-ignore = []
+ignore = ["F841"]  # Ignore unused variables
 
 # Allow fix for all enabled rules (when `--fix`) is provided.
 fixable = ["ALL"]
